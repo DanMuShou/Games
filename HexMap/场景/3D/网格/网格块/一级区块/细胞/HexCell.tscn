@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://crlh1ns7rgwji"]
+
+[ext_resource type="Script" uid="uid://c2bapf451idyj" path="res://场景/3D/网格/网格块/一级区块/细胞/HexCell.cs" id="1_66cxw"]
+[ext_resource type="PackedScene" uid="uid://x5cv0d2ieggv" path="res://场景/3D/网格/网格块/一级区块/细胞/信息标签/CellLabel.tscn" id="2_13gjk"]
+
+[node name="HexCell" type="Node3D" node_paths=PackedStringArray("_infoLabel")]
+script = ExtResource("1_66cxw")
+_infoLabel = NodePath("CellLabel")
+
+[node name="CellLabel" parent="." instance=ExtResource("2_13gjk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.1, 0)

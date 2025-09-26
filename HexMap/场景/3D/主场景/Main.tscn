@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5gkdqaq4fr0u"]
+
+[ext_resource type="PackedScene" uid="uid://d3he2jgl5ppmh" path="res://场景/3D/网格/网格块/HexGrid.tscn" id="1_4ke3k"]
+[ext_resource type="Script" uid="uid://vyjy61oi3iyc" path="res://场景/3D/主场景/Main.cs" id="1_tuj34"]
+[ext_resource type="Environment" uid="uid://bwayuxvaym31m" path="res://2_资源/世界环境/MainEnvironment.tres" id="2_8s3yo"]
+[ext_resource type="PackedScene" uid="uid://vsprf5nvicwr" path="res://场景/3D/相机/HexMapCamera.tscn" id="3_1ow4s"]
+[ext_resource type="PackedScene" uid="uid://dvkrrs64gv2l6" path="res://场景/2D/UI/Ui.tscn" id="3_8s3yo"]
+[ext_resource type="PackedScene" uid="uid://ehmsg3cxyh5y" path="res://场景/组件/输入管理/InputManager.tscn" id="6_l4wkv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gmfq0"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("_hexGrid", "_camera", "_ui", "_input")]
+script = ExtResource("1_tuj34")
+_hexGrid = NodePath("HexGrid")
+_camera = NodePath("HexMapCamera")
+_ui = NodePath("UI")
+_input = NodePath("Manager/InputManager")
+
+[node name="Manager" type="Node" parent="."]
+
+[node name="InputManager" parent="Manager" instance=ExtResource("6_l4wkv")]
+
+[node name="Word" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Word"]
+environment = ExtResource("2_8s3yo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Word"]
+transform = Transform3D(0.766044, 0.271654, -0.582563, 0, 0.906307, 0.422618, 0.642787, -0.323744, 0.694272, 0, 0, 0)
+light_color = Color(1, 0.969667, 0.87, 1)
+light_energy = 1.3
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+
+[node name="UI" parent="." instance=ExtResource("3_8s3yo")]
+
+[node name="HexGrid" parent="." instance=ExtResource("1_4ke3k")]
+
+[node name="HexMapCamera" parent="." node_paths=PackedStringArray("_grid") instance=ExtResource("3_1ow4s")]
+_grid = NodePath("../HexGrid")
+
+[node name="Test" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10, 0, 0)
+mesh = SubResource("SphereMesh_gmfq0")
+skeleton = NodePath("../..")

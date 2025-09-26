@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://eskby277y0yt"]
+
+[ext_resource type="Material" uid="uid://cdiebeoetnnb7" path="res://2_资源/材质/特征/Plant.tres" id="1_emclt"]
+
+[node name="Megaflora" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.91496, 0, 0.403545, 0, 1, 0, -0.403545, 0, 0.91496, 0, 0.5, 0)
+material_override = ExtResource("1_emclt")
+size = Vector3(0.29, 1, 0.325)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.97437, 0, 0.224951, 0, 1, 0, -0.224951, 0, 0.97437, 0.160983, -0.075, 0.346948)
+size = Vector3(0.2, 0.85, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-0.492424, 0, -0.870356, 0, 1, 0, 0.870356, 0, -0.492424, -0.291103, -0.375, 0.256849)
+size = Vector3(0.2, 0.25, 0.2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.5373, 0, 0.843391, 0, 1, 0, -0.843391, 0, 0.5373, -0.347194, -0.325, -0.182192)
+size = Vector3(0.35, 0.35, 0.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.953717, 0, -0.300706, 0, 1, 0, 0.300706, 0, 0.953717, 0.114283, -0.225, -0.361187)
+size = Vector3(0.35, 0.55, 0.25)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.0436194, 0, 0.999049, 0, 1, 0, -0.999049, 0, 0.0436194, 0.401085, -0.4, 0.10499)
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.920505, 0, 0.390731, 0, 1, 0, -0.390731, 0, 0.920505, 0.394396, -0.425, -0.167303)
+size = Vector3(0.1, 0.15, 0.15)

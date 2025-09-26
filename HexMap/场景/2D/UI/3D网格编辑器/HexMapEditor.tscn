@@ -1,0 +1,131 @@
+[gd_scene load_steps=4 format=3 uid="uid://crnjlpe6abopc"]
+
+[ext_resource type="Script" uid="uid://ckkrpa7u4p8l1" path="res://场景/2D/UI/3D网格编辑器/HexMapEditor.cs" id="1_6uyae"]
+[ext_resource type="PackedScene" uid="uid://b8a2ojble4x6v" path="res://场景/组件/UI/选择级别/EnableLevelComponent.tscn" id="2_8pwrk"]
+[ext_resource type="PackedScene" uid="uid://b5f5lpadt7v4" path="res://场景/组件/UI/弹窗选择/OptionSelectComponent.tscn" id="3_c5psa"]
+
+[node name="HexMapEditor" type="MarginContainer" node_paths=PackedStringArray("_elevation", "_water", "_urban", "_farm", "_plant", "_special", "_color", "_river", "_road", "_wall", "_brushSizeLabel", "_brushSizeSelector", "_labelVisualCheck", "_saveBut", "_loadBut", "_newMapBut")]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 160.0
+grow_vertical = 2
+size_flags_horizontal = 0
+focus_mode = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_6uyae")
+_elevation = NodePath("PanelContainer/MarginContainer/VBoxContainer/Elevation")
+_water = NodePath("PanelContainer/MarginContainer/VBoxContainer/Water")
+_urban = NodePath("PanelContainer/MarginContainer/VBoxContainer/Urban")
+_farm = NodePath("PanelContainer/MarginContainer/VBoxContainer/Farm")
+_plant = NodePath("PanelContainer/MarginContainer/VBoxContainer/Plant")
+_special = NodePath("PanelContainer/MarginContainer/VBoxContainer/Special")
+_color = NodePath("PanelContainer/MarginContainer/VBoxContainer/Color")
+_river = NodePath("PanelContainer/MarginContainer/VBoxContainer/River")
+_road = NodePath("PanelContainer/MarginContainer/VBoxContainer/Road")
+_wall = NodePath("PanelContainer/MarginContainer/VBoxContainer/Wall")
+_brushSizeLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/BrushSize/BrushLabel")
+_brushSizeSelector = NodePath("PanelContainer/MarginContainer/VBoxContainer/BrushSize/Brush")
+_labelVisualCheck = NodePath("PanelContainer/MarginContainer/VBoxContainer/LabelVisual")
+_saveBut = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Save")
+_loadBut = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Load")
+_newMapBut = NodePath("PanelContainer/MarginContainer/VBoxContainer/NewMap")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+focus_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 5
+
+[node name="Elevation" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Water" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Urban" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Farm" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Plant" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Special" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_8pwrk")]
+layout_mode = 2
+
+[node name="Color" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+focus_mode = 1
+
+[node name="River" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+focus_mode = 1
+
+[node name="Road" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+focus_mode = 1
+
+[node name="Wall" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_c5psa")]
+layout_mode = 2
+focus_mode = 1
+
+[node name="BrushSize" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+focus_mode = 1
+
+[node name="BrushLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BrushSize"]
+layout_mode = 2
+text = "笔刷范围 : B*B"
+horizontal_alignment = 1
+
+[node name="Brush" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/BrushSize"]
+layout_mode = 2
+focus_mode = 0
+max_value = 4.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="LabelVisual" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+text = "格子标签"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_constants/separation = 5
+
+[node name="Save" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "保存"
+
+[node name="Load" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "加载"
+
+[node name="NewMap" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+text = "新建地图"

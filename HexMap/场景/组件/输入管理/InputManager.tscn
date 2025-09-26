@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ehmsg3cxyh5y"]
+
+[ext_resource type="Script" uid="uid://cnprnxxym005v" path="res://场景/组件/输入管理/InputManager.cs" id="1_y7hel"]
+
+[node name="InputManager" type="Node"]
+script = ExtResource("1_y7hel")

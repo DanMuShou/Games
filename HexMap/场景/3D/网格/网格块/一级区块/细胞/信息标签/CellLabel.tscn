@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://x5cv0d2ieggv"]
+
+[node name="CellLabel" type="Label3D"]
+double_sided = false
+text = "AAA"

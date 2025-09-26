@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp7n5ypom5131"]
+
+[ext_resource type="Material" uid="uid://bvy33s62hldjj" path="res://2_资源/材质/特征/Urban.tres" id="1_6xuh7"]
+
+[node name="WallTower" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = ExtResource("1_6xuh7")
+calculate_tangents = false
+size = Vector3(0.2, 0.4, 0.2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+calculate_tangents = false
+size = Vector3(0.1, 0.1, 0.1)

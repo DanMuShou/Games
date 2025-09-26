@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://deygkkyakl0rn"]
+
+[ext_resource type="PackedScene" uid="uid://bfkauj8n28moj" path="res://场景/3D/网格/绘制/HexMesh.tscn" id="1_4vngl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4vngl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muppj"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Test2" type="Node3D"]
+
+[node name="HexMesh" parent="." instance=ExtResource("1_4vngl")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -13.1679, 1.89229, -0.659418)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85811, 3.28683)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -2.51658, 0)
+mesh = SubResource("PlaneMesh_4vngl")
+surface_material_override/0 = SubResource("StandardMaterial3D_muppj")
